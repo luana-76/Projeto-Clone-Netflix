@@ -1,0 +1,57 @@
+@media (max-width: 852px){
+	
+	/* Não mexe nessa porra */
+
+	#firstList .d{
+		
+		display: block;
+		color: #fff;
+
+	}
+	.d::after{
+		
+		content: url(https://img.icons8.com/fluency-systems-filled/14/ffffff/down3.png);
+		display: inline-block;
+		margin-left: 2px;
+		position: relative;
+		top: 5px;
+
+	}
+
+	.ulone{
+		
+		display:none;
+
+	}
+
+	#firstList:hover .ulone{
+		
+		position: relative;
+		left: -80px;
+		display: block;
+		background: #000000db;
+		width: 250px;
+		height: 250px;
+		padding: 0;
+		margin-top: 48px;
+		border-top: 1px solid #fff;
+
+	}
+	#firstList:hover{
+		
+		position: relative;
+		top: 150px;
+
+	}
+
+	#firstList .ulone li{
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: center;
+		height: 49px;
+		margin: 0;
+
+	}
+
+}
