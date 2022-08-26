@@ -148,7 +148,7 @@ a{text-decoration: none;}
      display: block;
      position:absolute;
      /*top: 21px;*/
-     right: 70px;
+     right: 45px;
      /*background-color: #000000db;*/
      width:175px;
      /*border: 0.5px solid gray;*/
@@ -200,10 +200,31 @@ a{text-decoration: none;}
     border-top: 3px solid #9d9d9d;*/
  
 }
+
+/* Seta pequena nas caixas */
 #boxPrinciNoti:before{
 
-    content:url(https://img.icons8.com/material-rounded/17/ffffff/sort-down.png);
-    transform: rotate(180deg);
+    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
+    position: relative;
+    top: 19px;
+    left: 360px;
+    
+
+}
+
+#subListTwo{
+
+    margin-top: 7px;
+
+}
+
+#ulTwo:hover #listTwo:before{
+
+    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
+    position: relative;
+    top: 30px;
+    left: 27px;
+    
 
 }
 

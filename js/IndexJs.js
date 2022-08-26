@@ -62,6 +62,12 @@ class FunctionNetflix{
 
     }
 
+    /*boxSeta(){
+
+        let imgSeta = document.querySelector()
+
+    }*/
+
 }
 
 new FunctionNetflix()
