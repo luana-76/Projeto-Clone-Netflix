@@ -10,7 +10,7 @@ body{
 
 header{
 	
-	background:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)), url(https://occ-0-933-420.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaJR4_AkF6rrVZMgwsZtB8D14DukrxrdKgntB97VJYn4qYN3igQiNRiBCrTCF5dCv50tmUorlheP_vQj7Cj_jdV6q7tNkDAlK5mR.webp?r=e4a)no-repeat;
+	background:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)), url(https://occ-0-933-420.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWMZa8iWRT8VWOH6tIdbS_gfxSRLwxaMw7QiiBwy-V-q52w2yA5aNeyVqGNrbS2MMXYV8o39ofeoVPFmmNYs7oqwj7yISMASgvQz.webp?r=618)no-repeat;
     background-size: cover;
 	height: 100vh;
 	width: 100vw;
@@ -85,6 +85,7 @@ a{text-decoration: none;}
 
 #searchBut{/*Estilização do botão*/
 	
+
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -115,9 +116,31 @@ a{text-decoration: none;}
     
 }*/
 
+#seta{
+
+    position: relative;
+    bottom: 8px;
+
+}
+
+#listTwo:hover #seta{
+
+    animation-name: loading;
+    animation-duration:0.4s;
+
+}
+
+@keyframes loading {
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(180deg);
+	}
+}
+
 #ulTwo:hover #subListTwo{
     
-     
      padding: 0;
      padding-top: 20px;
      /*margin-top: 10px;*/
@@ -152,10 +175,6 @@ a{text-decoration: none;}
     
 }
 #subListTwo li a img{vertical-align: middle;margin-right: 10px;}
-#borderbottom{
-        
-    border-top: 3px solid #fff; 
-}
 
 /*#subListTwo::before{
     content:url(https://img.icons8.com/fluency-systems-filled/14/ffffff/down3.png);
@@ -181,6 +200,18 @@ a{text-decoration: none;}
     border-top: 3px solid #9d9d9d;*/
  
 }
+#boxPrinciNoti:before{
+
+    content:url(https://img.icons8.com/material-rounded/17/ffffff/sort-down.png);
+    transform: rotate(180deg);
+
+}
+
+#notificacao{
+
+    cursor: pointer;
+
+}
 
 #notificacao:hover #boxPrinciNoti{
     
@@ -190,19 +221,24 @@ a{text-decoration: none;}
 
 #pesq{
     
-      display:none;
+      /*display:none;*/
+      width: 0px;
       background: none;
       
     
 }
 #falseMain{
 
-    height:80vh;
+    height: 80vh;
     margin-left: 50px;
-
+   
 }
 #interMainFalse{
 
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /*height: 100%;
     padding-top: 9%;*/
     /*background:blue;
@@ -221,8 +257,16 @@ a{text-decoration: none;}
     font-size:1em;
     font-weight: 700;
     border: none;
+    cursor: pointer;
 
 }
+
+#playBut:hover{
+
+    background: rgb(207, 207, 207); transition: color .4s;
+
+}
+
 #imgPlayBut{
 
     vertical-align: middle;
@@ -248,5 +292,11 @@ a{text-decoration: none;}
     padding-left: 18px;
     padding-right: 18px;
     border: none;
+    cursor: pointer;
+}
+
+#informacoes:hover{
+
+    background: rgb(56, 56, 56); transition: color .4s;
 
 }
