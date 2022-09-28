@@ -10,6 +10,8 @@ class FunctionNetflix{
         this.boxSeta = document.querySelector('#listTwo');
         this.seta = document.querySelector('#seta');
         this.setaAbrir();
+        this.notiEl = document.querySelector("#notificacao");
+        this.beforeDeH2();
 
 
     }
@@ -32,12 +34,17 @@ class FunctionNetflix{
 
         this.search.addEventListener('blur', event=>{
 
-            this.search.style.width = "0px";
-            this.search.style.transition = "width 0.5s";
-            /*this.search.style.display = "none";*/
-            this.boxsearch.style.background = "";
-            this.boxsearch.style.border = "none";
-            document.querySelector("#search").style.margin = "0px 0px 0px 0px";
+            if(this.search.value == ""){
+
+                this.search.style.width = "0px";
+                this.search.style.transition = "width 0.5s";
+                /*this.search.style.display = "none";*/
+                this.boxsearch.style.background = "";
+                this.boxsearch.style.border = "none";
+                document.querySelector("#search").style.margin = "0px 0px 0px 0px";
+
+
+            }
 
         })
 
@@ -62,11 +69,27 @@ class FunctionNetflix{
 
     }
 
-    /*boxSeta(){
+    MensagemDeNotificacao(){
 
-        let imgSeta = document.querySelector()
+        this.notiEl.addEventListener("mouseover", event=>{
 
-    }*/
+            console.log("ok");
+
+
+        })
+
+    }
+
+    beforeDeH2(){
+
+        let h2 = document.querySelector(".sectionsMoviesSeries div h2");
+        h2.addEventListener("mouseover", event=>{
+
+            
+
+        })
+
+    }
 
 }
 

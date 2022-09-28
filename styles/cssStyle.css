@@ -5,6 +5,7 @@ body{
 	padding: 0;
 	font-family: sans-serif;
 	background: #000000;
+    /*overflow: scroll;*/
 
 }
 
@@ -13,7 +14,7 @@ header{
 	background:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)), url(https://occ-0-933-420.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWMZa8iWRT8VWOH6tIdbS_gfxSRLwxaMw7QiiBwy-V-q52w2yA5aNeyVqGNrbS2MMXYV8o39ofeoVPFmmNYs7oqwj7yISMASgvQz.webp?r=618)no-repeat;
     background-size: cover;
 	height: 100vh;
-	width: 100vw;
+	/*width: 100vw;*/
 	/*background: #000;*/
 }
 
@@ -189,10 +190,10 @@ a{text-decoration: none;}
     display: none;
     color: white;
     position:absolute;
-    /*top:60px;*/
-    margin-top: 10px;
+    top:0px;
+    /*margin-top: 10px;*/
     padding-top: 10px;
-    right: 120px;
+    right: -20px;
     /*background-color: #000000db;*/
     width: 400px;
     color: #c7c7c7;
@@ -248,6 +249,21 @@ a{text-decoration: none;}
       
     
 }
+
+#noti{
+
+    width: 17px;
+    height: 17px;
+    background: #b9090b;
+    border-radius: 20px;
+    color:#fff;
+    text-align: center;
+    font-size: 0.8em;
+    position: absolute;
+    right: -5px;
+
+}
+
 #falseMain{
 
     height: 80vh;
@@ -321,3 +337,30 @@ a{text-decoration: none;}
     background: rgb(56, 56, 56); transition: color .4s;
 
 }
+
+.imagensSeries{
+
+    width: 250px;
+    margin-left: 7px;
+
+}
+.sectionsMoviesSeries{margin-bottom: 60px;}
+
+.sectionsMoviesSeries div h2{
+
+    color:#fff;
+    font-size: 1.2em;
+    margin: 0px 0px 10px 44px;
+
+}
+
+.sectionsMoviesSeries .scroll{
+
+    width:96vw;
+    display:flex;
+    /*overflow:auto;*/
+    overflow:hidden;
+    margin-left: 38px;
+
+}
+
