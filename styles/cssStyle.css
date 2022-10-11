@@ -353,7 +353,13 @@ a{text-decoration: none;}
     margin: 0px 0px 10px 44px;
 
 }
+/*.sectionsMoviesSeries div h2::after{
 
+    content: "Ver tudo";
+    font-size:0.7em;
+    margin-left: 10px;
+
+}*/
 .sectionsMoviesSeries .scroll{
 
     width:96vw;
@@ -363,4 +369,79 @@ a{text-decoration: none;}
     margin-left: 38px;
 
 }
+.imgInviVisi{
 
+    /*margin-left: 10px;*/
+    margin-left: -5px;
+    font-size:0.6em;
+    display: none;
+    color: #54b9c5;
+
+}
+
+.sectionsMoviesSeries div h2:hover .imgInviVisi{
+
+    display: inline;
+    margin-left: 10px;
+    animation-name: espac;
+    animation-duration:0.8s;
+
+}
+
+/*Falta a ação de quando tirar o mouse*/
+@keyframes espac {
+    from{
+
+        opacity: 0.1;
+        margin-left: -5px;
+
+    }
+    2%{
+
+        opacity: 0.10;
+
+    }
+	to{
+
+        
+        margin-left: 10px;
+
+	}
+
+}
+
+.seta{
+
+    display: none;
+    position: absolute;
+    top: 5px;
+
+}
+
+.sectionsMoviesSeries:hover .seta{
+
+    display: inline;
+    width: 15px;
+    position: absolute;
+
+}
+
+
+.sectionsMoviesSeries div h2:hover .seta{
+
+    width:10px;
+    position: absolute;
+    top: 10px;
+
+}
+
+
+.sectionsMoviesSeries .setaPassar{
+
+    position: absolute;
+    right: 10px;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+
+}

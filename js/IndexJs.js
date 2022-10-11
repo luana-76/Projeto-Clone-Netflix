@@ -11,7 +11,7 @@ class FunctionNetflix{
         this.seta = document.querySelector('#seta');
         this.setaAbrir();
         this.notiEl = document.querySelector("#notificacao");
-        this.beforeDeH2();
+        //this.beforeDeH2();
 
 
     }
@@ -80,16 +80,33 @@ class FunctionNetflix{
 
     }
 
-    beforeDeH2(){
+    /*beforeDeH2(){
 
         let h2 = document.querySelector(".sectionsMoviesSeries div h2");
+        let contador = 1;
+        console.log(h2)
         h2.addEventListener("mouseover", event=>{
+            contador--
+            if(contador == 0){
 
+                h2.innerHTML += "<spans id='del' style='margin-left: 10px;font-size:0.7em;'>Ver tudo</span><img src='https://img.icons8.com/metro/22/54b9c5/forward.png'/>"
+
+            }
+
+            contador++
             
 
         })
+        h2.addEventListener("mouseleave", event=>{
 
-    }
+            let dele = document.querySelector('#del');
+            dele.remove()
+
+        })
+
+    }*/
+
+    
 
 }
 
