@@ -2,47 +2,42 @@ class FunctionNetflix{
 
     constructor(){
 
+        this.boxSearchEl = document.querySelector("#search");
         this.lupaEl = document.querySelector('#pesqBut');
         this.search = document.querySelector('#pesq');
         this.boxsearch = document.querySelector('#searchBut');
-        this.acaoDeClick();
-        this.cont;
+        this.acaoDeClickBotaoPesquisa();
         this.boxSeta = document.querySelector('#listTwo');
         this.seta = document.querySelector('#seta');
-        this.setaAbrir();
-        this.notiEl = document.querySelector("#notificacao");
-        //this.beforeDeH2();
+        this.rotacaodeSeta();
+        this.scroll()
+    }
 
+
+    styleButSeach(background, border, transition, width, margin){
+
+        this.boxsearch.style.background = background;
+        this.boxsearch.style.border = border;
+        this.search.style.transition = transition;
+        this.search.style.width = width;
+        this.boxSearchEl.style.margin = margin;
 
     }
 
-    acaoDeClick(){
+    acaoDeClickBotaoPesquisa(){
 
         this.lupaEl.addEventListener('click', event=>{
 
-            /*this.search.style.display = "inline-block";*/
-            
             this.search.focus();
-            this.boxsearch.style.background = "rgb(20 20 20 / 68%)";
-            this.boxsearch.style.border = "1px solid #fff";
-            this.search.style.transition = "width 0.5s";
-            this.search.style.width = "200px";
-            document.querySelector("#search").style.margin = "0px 15px 0px 0px";
+            this.styleButSeach("rgb(20 20 20 / 68%)", "1px solid #fff", "width 0.5s", "200px", "0px 15px 0px 0px");
             
-
         });
 
         this.search.addEventListener('blur', event=>{
 
-            if(this.search.value == ""){
+            if(this.search.value === ""){
 
-                this.search.style.width = "0px";
-                this.search.style.transition = "width 0.5s";
-                /*this.search.style.display = "none";*/
-                this.boxsearch.style.background = "";
-                this.boxsearch.style.border = "none";
-                document.querySelector("#search").style.margin = "0px 0px 0px 0px";
-
+                this.styleButSeach("", "none", "width 0.5s", "0px", "0px 0px 0px 0px");
 
             }
 
@@ -50,7 +45,7 @@ class FunctionNetflix{
 
     }
 
-    setaAbrir(){
+    rotacaodeSeta(){
 
         this.boxSeta.addEventListener('mouseover', event=>{
 
@@ -61,6 +56,7 @@ class FunctionNetflix{
             } 
 
         })
+
         this.boxSeta.addEventListener('mouseleave', event=>{
 
             this.seta.style.transform = 'rotate(0deg)';
@@ -69,45 +65,66 @@ class FunctionNetflix{
 
     }
 
-    MensagemDeNotificacao(){
+    rolacaoScroll(scroll, setaDireita, setaEsquerda, section, cont){
 
-        this.notiEl.addEventListener("mouseover", event=>{
-
-            console.log("ok");
-
-
-        })
-
-    }
-
-    /*beforeDeH2(){
-
-        let h2 = document.querySelector(".sectionsMoviesSeries div h2");
-        let contador = 1;
-        console.log(h2)
-        h2.addEventListener("mouseover", event=>{
-            contador--
-            if(contador == 0){
-
-                h2.innerHTML += "<spans id='del' style='margin-left: 10px;font-size:0.7em;'>Ver tudo</span><img src='https://img.icons8.com/metro/22/54b9c5/forward.png'/>"
-
-            }
-
-            contador++
+                    setaDireita.addEventListener('click', e=>{
+                        
+                        if(cont < 3630){
             
+                            scroll.scrollTo(cont += 1210, 0);
+            
+                        }
+        
+                        if(cont >= 1210){
+        
+                            setaEsquerda.style.display = 'block'
+                            scroll.style.margin = "0 0 0 0"
+                            section.addEventListener('mouseover', e=>{
+            
+                                setaDireita.style.display = "block";
+                                setaEsquerda.style.display = "block";
+            
+                            })
+            
+                            section.addEventListener('mouseleave', e=>{
+            
+                                setaDireita.style.display = "none";
+                                setaEsquerda.style.display = "none";
+            
+                            })
+                
+                        }
+                    })
+        
+                setaEsquerda.addEventListener('click', e=>{
+        
+                    if(cont != 0){
+        
+                        scroll.scrollTo(cont -= 1210, 0);
+        
+                    }
+                })
 
-        })
-        h2.addEventListener("mouseleave", event=>{
+        }
+    scroll(){
 
-            let dele = document.querySelector('#del');
-            dele.remove()
+        this.section = [...document.querySelectorAll('.sectionsMoviesSeries')];
+        this.scrollEl = [...document.querySelectorAll('.scroll')];
+        this.direita = [...document.querySelectorAll('.setaDireita')];
+        this.esquerda = [...document.querySelectorAll('.setaEsquerda')];
 
-        })
-
-    }*/
+        if([...document.querySelectorAll('.scroll')][0]){
+            let cont = 0
+            this.rolacaoScroll(this.scrollEl[0], this.direita[0],this.esquerda[0], this.section[0], cont)
+        }
+        if([...document.querySelectorAll('.scroll')][1]){
+            let cont = 0
+            this.rolacaoScroll(this.scrollEl[1], this.direita[1],this.esquerda[1], this.section[1], cont)
+        }
 
     
 
-}
+    }
 
+}
 new FunctionNetflix()

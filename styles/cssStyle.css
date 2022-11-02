@@ -340,7 +340,7 @@ a{text-decoration: none;}
 
 .imagensSeries{
 
-    width: 250px;
+    width: 245px;
     margin-left: 7px;
 
 }
@@ -366,7 +366,10 @@ a{text-decoration: none;}
     display:flex;
     /*overflow:auto;*/
     overflow:hidden;
+    /*margin-left: 38px;*/
     margin-left: 38px;
+    /*position: relative;
+    left: 28px;*/
 
 }
 .imgInviVisi{
@@ -436,12 +439,39 @@ a{text-decoration: none;}
 }
 
 
-.sectionsMoviesSeries .setaPassar{
+.sectionsMoviesSeries .setaDireita{
 
-    position: absolute;
-    right: 10px;
-    background-color: Transparent;
+    height: 141px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.596);
     border: none;
     cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 0;
+
+}
+
+.sectionsMoviesSeries:hover .setaDireita{
+
+    display: block;
+
+}
+
+/*.sectionsMoviesSeries:hover .setaEsquerda{
+
+    display: block;
+
+}*/
+
+.sectionsMoviesSeries .setaEsquerda{
+    
+    display: none;
+    height: 141px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.596);
+    border: none;
+    cursor: pointer;
+    position: absolute;
 
 }
