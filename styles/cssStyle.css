@@ -370,6 +370,7 @@ a{text-decoration: none;}
     margin-left: 38px;
     /*position: relative;
     left: 28px;*/
+    scroll-behavior: smooth;
 
 }
 .imgInviVisi{
@@ -443,20 +444,37 @@ a{text-decoration: none;}
 
     height: 141px;
     width: 50px;
-    background-color: rgba(0, 0, 0, 0.596);
+    background-color: rgba(0, 0, 0, 0.42);
     border: none;
     cursor: pointer;
-    display: none;
+    /*display: none;*/
     position: absolute;
     right: 0;
 
 }
+/*Imagen da seta*/
+.direito{
 
-.sectionsMoviesSeries:hover .setaDireita{
+    display: none;
+
+}
+.scroll:hover .direito{
 
     display: block;
 
 }
+
+.esquerda{
+
+    transform: rotate(180deg)
+
+}
+
+/*.sectionsMoviesSeries:hover .setaDireita{
+
+    display: block;
+
+}*/
 
 /*.sectionsMoviesSeries:hover .setaEsquerda{
 

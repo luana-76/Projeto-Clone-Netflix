@@ -65,8 +65,9 @@ class FunctionNetflix{
 
     }
 
-    rolacaoScroll(scroll, setaDireita, setaEsquerda, section, cont){
+    rolacaoScroll(scroll, setaDireita, setaEsquerda, section, setaOne, setaTwo, cont){
 
+        //scroll.scrollIntoView({behavior: "smooth"})
                     setaDireita.addEventListener('click', e=>{
                         
                         if(cont < 3630){
@@ -79,17 +80,18 @@ class FunctionNetflix{
         
                             setaEsquerda.style.display = 'block'
                             scroll.style.margin = "0 0 0 0"
+                            scroll.style.width = '98.6vw'
                             section.addEventListener('mouseover', e=>{
             
-                                setaDireita.style.display = "block";
-                                setaEsquerda.style.display = "block";
+                                setaOne.style.display = "block";
+                                setaTwo.style.display = "block";
             
                             })
             
                             section.addEventListener('mouseleave', e=>{
             
-                                setaDireita.style.display = "none";
-                                setaEsquerda.style.display = "none";
+                                setaOne.style.display = "none";
+                                setaTwo.style.display = "none";
             
                             })
                 
@@ -112,14 +114,17 @@ class FunctionNetflix{
         this.scrollEl = [...document.querySelectorAll('.scroll')];
         this.direita = [...document.querySelectorAll('.setaDireita')];
         this.esquerda = [...document.querySelectorAll('.setaEsquerda')];
+        this.setaOne = [...document.querySelectorAll('.direito')];
+        this.setaTwo = [...document.querySelectorAll('.esquerda')];
+        console.log(this.setaOne)
 
         if([...document.querySelectorAll('.scroll')][0]){
             let cont = 0
-            this.rolacaoScroll(this.scrollEl[0], this.direita[0],this.esquerda[0], this.section[0], cont)
+            this.rolacaoScroll(this.scrollEl[0], this.direita[0],this.esquerda[0], this.section[0], this.setaOne[0],this.setaTwo[0], cont)
         }
         if([...document.querySelectorAll('.scroll')][1]){
             let cont = 0
-            this.rolacaoScroll(this.scrollEl[1], this.direita[1],this.esquerda[1], this.section[1], cont)
+            this.rolacaoScroll(this.scrollEl[1], this.direita[1],this.esquerda[1], this.section[1], this.setaOne[1],this.setaTwo[1], cont)
         }
 
     
