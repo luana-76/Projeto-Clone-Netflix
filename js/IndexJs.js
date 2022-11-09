@@ -10,7 +10,9 @@ class FunctionNetflix{
         this.boxSeta = document.querySelector('#listTwo');
         this.seta = document.querySelector('#seta');
         this.rotacaodeSeta();
-        this.scroll()
+        this.scroll();
+        this.con=0
+
     }
 
 
@@ -67,14 +69,20 @@ class FunctionNetflix{
 
     rolacaoScroll(scroll, setaDireita, setaEsquerda, section, setaOne, setaTwo, cont){
 
-        //scroll.scrollIntoView({behavior: "smooth"})
+                //scroll.scrollIntoView({behavior: "smooth"})
+    
                     setaDireita.addEventListener('click', e=>{
+                        if(cont < 3)this.con++
+                        scroll.scrollTo(cont += 1210, 0);
+                        console.log(cont)
+                        this.scrollCreate(true, this.con)
                         
-                        if(cont < 3630){
+                        /*if(cont < 3630){
             
                             scroll.scrollTo(cont += 1210, 0);
+                            this.scrollCreate(true, this.con)
             
-                        }
+                        }*/
         
                         if(cont >= 1210){
         
@@ -99,12 +107,15 @@ class FunctionNetflix{
                     })
         
                 setaEsquerda.addEventListener('click', e=>{
-        
+                    /*this.con--*/
+                    if(cont > 3630) cont = 3630
                     if(cont != 0){
-        
+                        this.con--
                         scroll.scrollTo(cont -= 1210, 0);
+                        this.scrollCreate(false, this.con)
         
                     }
+                    console.log(cont)
                 })
 
         }
@@ -130,6 +141,51 @@ class FunctionNetflix{
     
 
     }
+
+    scrollCreate(passou, cont){
+
+        //console.log([...document.querySelectorAll('.imagensSeries')])
+        let imgs = [...document.querySelectorAll('.imagensSeries')]
+        let list = [imgs[0], imgs[1], imgs[2], imgs[3]]
+        if(passou == true){
+            if(cont => 2){
+                
+                imgs[0].remove()
+                imgs[1].remove()
+                imgs[2].remove()
+                imgs[3].remove()
+
+                document.querySelector('.scroll').appendChild(list[0])
+                document.querySelector('.scroll').appendChild(list[1])
+                document.querySelector('.scroll').appendChild(list[2])
+                document.querySelector('.scroll').appendChild(list[3])
+                
+            }
+
+        }
+
+        if(passou == false){
+                console.log('certo')
+                
+                //document.querySelector('.scroll').innerHTML = document.querySelector('.scroll')
+
+        }
+ 
+
+    }
+
+    /*gambiarra(element){
+
+        let div = document.createElement('div')
+        element.appendChild(div)
+
+        let imgOne = 
+        let imgOne = 
+        let imgOne = 
+        let imgOne = 
+
+
+    }*/
 
 }
 new FunctionNetflix()
