@@ -5,22 +5,21 @@ body{
 	padding: 0;
 	font-family: sans-serif;
 	background: #000000;
-    /*overflow: scroll;*/
 
 }
 
 header{
 	
-	background:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)), url(https://occ-0-933-420.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWMZa8iWRT8VWOH6tIdbS_gfxSRLwxaMw7QiiBwy-V-q52w2yA5aNeyVqGNrbS2MMXYV8o39ofeoVPFmmNYs7oqwj7yISMASgvQz.webp?r=618)no-repeat;
+	background:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)),
+    url(https://occ-0-933-420.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWMZa8iWRT8VWOH6tIdbS_gfxSRLwxaMw7QiiBwy-V-q52w2yA5aNeyVqGNrbS2MMXYV8o39ofeoVPFmmNYs7oqwj7yISMASgvQz.webp?r=618)no-repeat;
     background-size: cover;
 	height: 100vh;
-	/*width: 100vw;*/
-	/*background: #000;*/
+
 }
 
 /*Classes globais*/
 
-.display{
+.displayFlex{
 	
 	display: flex;
     flex-direction: row;
@@ -32,13 +31,11 @@ header{
 
 .boxs{margin-left: 15px;}
 
-#boxTwo{margin-right: 50px;display:flex;}
-
 a{text-decoration: none;}
 
 /* Menu */
 
-#nav{
+#navHeader{
 	
     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
 	height: 70px;
@@ -46,7 +43,9 @@ a{text-decoration: none;}
 
 }
 
-#boxOne{
+/* Estilização da primeira caixa */
+
+#firstBox{/* Posicionamento da primeira caixa */
 	
 	position: relative;
 	left: -15px;
@@ -54,15 +53,9 @@ a{text-decoration: none;}
 
 }
 
-/* Estlização que será ativado quando estiver em dispositivo menor */
-/* Primeira lista */
-#firstList #firstLi{
-	
-	display: none;
+#firstList #firstLi{display: none;}
 
-}
-
-#boxOne li{
+#firstBox li{
 
 	display: inline;
 	margin-right: 8px;
@@ -71,60 +64,151 @@ a{text-decoration: none;}
 
 }
 
-#boxOne a{color: rgb(229, 229, 229); transition: color .4s;}
+#firstBox a{color: rgb(229, 229, 229); transition: color .4s;}
+#firstBox li a:hover{color:gray;}
 
-#boxOne li a:hover{color:gray;}
+/* Segunda caixa */
 
-#ulTwo{
+#secondBox{
 	
-	margin: 0 0 0 15px;
 	padding: 0;
     display: inline-block;
-        
+    margin-right: 50px;
+    display:flex;  
 
 }
 
-#searchBut{/*Estilização do botão*/
-	
+#rightBox{
 
-	border: none;
-	outline: none;
-	cursor: pointer;
-    /*background: rgb(20 20 20 / 68%);
-    border: 1px solid #fff;*/
+    display:flex;
+    position: absolute;
+    right: 44px;
+    top: 20px;
 
 }
 
-#subListTwo{
+#searchBut{
+
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: Transparent;
+    border: 0;
+
+}
+
+#searchtBoxInt{margin-top: 3px;}
+
+#pesq{
+    
+    width: 0px;
+    background: none;
+    border:0;
+    outline: 0;
+    color:white;
+  
+}
+
+#butInfantil{
+
+    float: left;
+    margin: 5px 0px 0px 0px;
+    display: inline-block;
+
+}
+
+#butInfantil a{
+
+    color: #fff;
+    cursor: pointer;
+
+}
+
+#notification{cursor: pointer;}
+
+#notification:hover #boxNotification{display: inline-block;}
+
+#boxNotification{
+    
+    display: none;
+    color: white;
+    position:absolute;
+    top:4px;
+    padding-top: 10px;
+    right: 39px;
+    width: 400px;
+    color: #c7c7c7;
  
-     display: none;
-    /* padding: 0;
-     margin-top: 70px;
-     display: block;
-     position:absolute;
-     top:90px;
-     top: 21px;
-     right: 70px;
-     width:175px;*/
-   
-   
 }
 
-/*#listTwo:hover{
-    
-     position:absolute;
-     top:100px;
-    
-}*/
+#noti{
 
-#seta{
+    width: 17px;
+    height: 17px;
+    background: #b9090b;
+    border-radius: 20px;
+    color:#fff;
+    text-align: center;
+    font-size: 0.8em;
+    position: absolute;
+    right: 54px;
+
+}
+
+/* arrow da caixa */
+#boxNotification:before{
+
+    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
+    position: relative;
+    top: 19px;
+    left: 360px;
+
+}
+
+#boxNotification div{
+
+    padding: 20px;
+    background-color: #000000db;
+    height: 70px;margin: 15px;
+    border: 0.1px solid #202020;
+    border-top: 3px solid #9d9d9d;
+
+}
+
+#boxNotification img{
+
+    width: 120px;
+    vertical-align: middle;
+    float:left;
+    margin-right:20px;
+
+}
+
+#boxNotification span{
+
+    font-size: 0.8em;
+    color:gray;
+    display: block;
+
+}
+
+.hStyle{
+
+    font-size: 1em;
+    font-weight: lighter;
+    margin:0;
+    display: block;
+    margin-bottom: 3px;
+
+}
+
+#arrow{
 
     position: relative;
     bottom: 8px;
 
 }
 
-#listTwo:hover #seta{
+#listTwo:hover #arrow{
 
     animation-name: loading;
     animation-duration:0.4s;
@@ -140,20 +224,49 @@ a{text-decoration: none;}
 	}
 }
 
-#ulTwo:hover #subListTwo{
+#listTwo{
+
+    list-style: none;
+    cursor: pointer;
+
+}
+
+#listUsu{
+
+    padding:0px;
+    margin:0px;
+    margin-left: 15px;
+
+}
+
+#listUsu:hover #subListTwo{display:block;}
+#listUsu:hover #listTwo:before{
+
+    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
+    position: absolute;
+    top: 40px;
+    left: 173px;
     
-     padding: 0;
-     padding-top: 20px;
-     /*margin-top: 10px;*/
-  
-     display: block;
-     position:absolute;
-     /*top: 21px;*/
-     right: 45px;
-     /*background-color: #000000db;*/
-     width:175px;
-     /*border: 0.5px solid gray;*/
-    
+
+}
+
+#profile-icon{
+
+    width: 32px;
+    border-radius:5px;
+
+}
+
+/* Lista de usuarios */
+#subListTwo{
+
+    padding: 0;
+    display: inline-block;
+    position:absolute;
+    right: 12px;
+    display: none;
+    width:175px;
+    padding-top: 20px;
 }
 
 #subListTwo li{
@@ -162,13 +275,10 @@ a{text-decoration: none;}
     padding: 13px 0px 0px 10px;
     list-style: none;
     margin-right: 10px;
-    /*padding-left:10px;
-    padding-top:15px;
-    padding-bottom:5px;*/
-    
     margin: 0;
     
 }
+
 #subListTwo li a{
     
         color: #fff;
@@ -177,114 +287,39 @@ a{text-decoration: none;}
 }
 #subListTwo li a img{vertical-align: middle;margin-right: 10px;}
 
-/*#subListTwo::before{
-    content:url(https://img.icons8.com/fluency-systems-filled/14/ffffff/down3.png);
-    
-}*/
+.imgUsu{
 
-/*Parte da notifica��o*/
-
-#boxPrinciNoti{
-    
-    /*display: none;*/
-    display: none;
-    color: white;
-    position:absolute;
-    top:0px;
-    /*margin-top: 10px;*/
-    padding-top: 10px;
-    right: -20px;
-    /*background-color: #000000db;*/
-    width: 400px;
-    color: #c7c7c7;
-    /*border: 0.1px solid #202020;
-    border-top: 3px solid #9d9d9d;*/
- 
-}
-
-/* Seta pequena nas caixas */
-#boxPrinciNoti:before{
-
-    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
-    position: relative;
-    top: 19px;
-    left: 360px;
-    
+    width:30px;
+    border-radius: 5px;
 
 }
 
-#subListTwo{
 
-    margin-top: 7px;
-
-}
-
-#ulTwo:hover #listTwo:before{
-
-    content:url(https://img.icons8.com/fluency-systems-filled/12/ffffff/triangle.png);
-    position: relative;
-    top: 30px;
-    left: 27px;
-    
-
-}
-
-#notificacao{
-
-    cursor: pointer;
-
-}
-
-#notificacao:hover #boxPrinciNoti{
-    
-        display: block;
-    
-}
-
-#pesq{
-    
-      /*display:none;*/
-      width: 0px;
-      background: none;
-      
-    
-}
-
-#noti{
-
-    width: 17px;
-    height: 17px;
-    background: #b9090b;
-    border-radius: 20px;
-    color:#fff;
-    text-align: center;
-    font-size: 0.8em;
-    position: absolute;
-    right: -5px;
-
-}
-
-#falseMain{
+/* Falso main */
+#serieMoment{
 
     height: 80vh;
     margin-left: 50px;
    
 }
-#interMainFalse{
+
+#interSerieMoment{
 
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*height: 100%;
-    padding-top: 9%;*/
-    /*background:blue;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-items: flex-end;*/
 
 }
+
+#interSerieMoment h1{
+
+    margin: 0;
+    width: 510px
+
+}
+
+#interSerieMoment p{color: #fff;}
 #playBut{
 
     background-color: #fff;
@@ -311,14 +346,14 @@ a{text-decoration: none;}
 
 }
 
-#informacoesImg{
+#informationImg{
 
     vertical-align: middle;
     margin-right: 10px;
 
 }
 
-#informacoes{
+#information{
 
     background-color: rgba(109,109,110,0.7);
     color: #fff;
@@ -332,50 +367,34 @@ a{text-decoration: none;}
     cursor: pointer;
 }
 
-#informacoes:hover{
+#information:hover{
 
     background: rgb(56, 56, 56); transition: color .4s;
 
 }
 
-.imagensSeries{
 
-    width: 245px;
-    margin-left: 7px;
+/*Parte do main*/
+
+main{
+
+    position:absolute;
+    bottom:-390px;
 
 }
-.sectionsMoviesSeries{margin-bottom: 60px;}
 
-.sectionsMoviesSeries div h2{
+main section{margin-bottom: 60px;}
+
+main section div h2{
 
     color:#fff;
     font-size: 1.2em;
     margin: 0px 0px 10px 44px;
 
 }
-/*.sectionsMoviesSeries div h2::after{
 
-    content: "Ver tudo";
-    font-size:0.7em;
-    margin-left: 10px;
+.visibilityText{
 
-}*/
-.sectionsMoviesSeries .scroll{
-
-    width:96vw;
-    display:flex;
-    /*overflow:auto;*/
-    overflow:hidden;
-    /*margin-left: 38px;*/
-    margin-left: 38px;
-    /*position: relative;
-    left: 28px;*/
-    scroll-behavior: smooth;
-
-}
-.imgInviVisi{
-
-    /*margin-left: 10px;*/
     margin-left: -5px;
     font-size:0.6em;
     display: none;
@@ -383,17 +402,16 @@ a{text-decoration: none;}
 
 }
 
-.sectionsMoviesSeries div h2:hover .imgInviVisi{
+main section div h2:hover .visibilityText{
 
     display: inline;
     margin-left: 10px;
-    animation-name: espac;
+    animation-name: space;
     animation-duration:0.8s;
 
 }
 
-/*Falta a ação de quando tirar o mouse*/
-@keyframes espac {
+@keyframes space {
     from{
 
         opacity: 0.1;
@@ -414,7 +432,7 @@ a{text-decoration: none;}
 
 }
 
-.seta{
+.arrow{
 
     display: none;
     position: absolute;
@@ -422,7 +440,7 @@ a{text-decoration: none;}
 
 }
 
-.sectionsMoviesSeries:hover .seta{
+main section:hover .arrow{
 
     display: inline;
     width: 15px;
@@ -431,7 +449,7 @@ a{text-decoration: none;}
 }
 
 
-.sectionsMoviesSeries div h2:hover .seta{
+main section div h2:hover .arrow{
 
     width:10px;
     position: absolute;
@@ -439,50 +457,24 @@ a{text-decoration: none;}
 
 }
 
+.imgScroll{
 
-.sectionsMoviesSeries .setaDireita{
-
-    height: 141px;
-    width: 50px;
-    background-color: rgba(0, 0, 0, 0.42);
-    border: none;
-    cursor: pointer;
-    /*display: none;*/
-    position: absolute;
-    right: 0;
-
-}
-/*Imagen da seta*/
-.direito{
-
-    display: none;
-
-}
-.scroll:hover .direito{
-
-    display: block;
+    width: 245px;
+    margin-left: 7px;
 
 }
 
-.esquerda{
+main section .scroll{
 
-    transform: rotate(180deg)
+    width:96vw;
+    display:flex;
+    overflow:hidden;
+    margin-left: 38px;
+    scroll-behavior: smooth;
 
 }
 
-/*.sectionsMoviesSeries:hover .setaDireita{
-
-    display: block;
-
-}*/
-
-/*.sectionsMoviesSeries:hover .setaEsquerda{
-
-    display: block;
-
-}*/
-
-.sectionsMoviesSeries .setaEsquerda{
+main section .arrownLeft{
     
     display: none;
     height: 141px;
@@ -493,3 +485,28 @@ a{text-decoration: none;}
     position: absolute;
 
 }
+
+.left{transform: rotate(180deg)}
+
+main section .arrowRight{
+
+    height: 141px;
+    width: 50px;
+    background-color: rgba(0, 0, 0, 0.42);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+
+}
+
+.right{display: none;}
+
+.scroll:hover .right{display: block;}
+
+/*.tela img{
+
+    width: 245px;
+    margin-left: 7px;
+
+}*/
