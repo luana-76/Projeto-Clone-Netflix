@@ -8,7 +8,27 @@
 		<link href='styles/styleresp.css' rel='stylesheet' type="text/css"/>
 	</head>
 	<body>
+		
+		<!-- Quando clicar no infantil -->
+		<div class='loadingPage'>
+
+			<div id="loading"></div>
+			<img alt='perfil' src="https://occ-0-5308-3851.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYh5hkXId5o_KJ5wCel_N8WJBVvymdS8CZKNFAEaGe4-xhjGuEPJoW288Q5YEFYopXfwp2EeqLMpGKbMINPHKZP7mdsHWKsmmn4o0DDeRxyU1qj4asp2eSTw9LoMSFSovfSFrSgjE3mIWg.png?r=080" alt="perfil"/>
+			
+		</div>
+
 		<header>
+
+			<!-- Video da serie -->
+			<div id='video'>
+
+				<video id='mudvid'controls autoplay muted style="width:98vw; position: absolute; z-index: -1;">
+	
+					<source id='vid' style='width:98vw;height: 50vh;' src="arquivos/HemlockGrove.mp4"/>
+	
+				</video>
+	
+			</div>
 			<nav>
 				<nav class='displayFlex' id='navHeader'>
 
@@ -21,7 +41,7 @@
 						<ul id='firstList'>
 
 							<li id='firstLi'>Navegação</li><!--A junção de lista está incorreta-->
-								<ul class='inline-block'>
+								<ul class='inline-block' id='responsivNone'>
 
 									<li><a href='' style='color: #fff;' target="_self">Início</a></li>
 									<li><a href='' target="_self">Séries</a></li>
@@ -54,7 +74,9 @@
 
 						<!-- Botão infantil -->
 						<div class='boxs' id="butInfantil">
-							<a href='' target="_self"> infantil </a>
+
+							<button>infantil</button>
+
 						</div>
 
 						<!-- Lista de usuarios -->
@@ -138,8 +160,17 @@
 
         		<div id='interSerieMoment'>
 
-                    <h1><img title='Hemlock Grove' src='https://occ-0-933-420.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABXQWRPUlrFXrMlZVfx3gnEg0-cgK_gxk8nB99hEM_xv-jZngA30CFRbhx8OJ3uNhG3c9kig9kzj_2spk2zOHZX6ZRGeV2NE3nCNQzYka358_6-crPOQ4EW4uhrTq_xLBn52i4Wkr87tyqiHSUXA6-X-vhdroIyQMZUU79YYhD9imcDCFtbZObw.webp?r=572' alt="hemlock grove"/></h1>
-                    <p>Segredos são só parte do cotidiano da pequena Hemlock Grove:<br/>
+                    <h1><img title='Hemlock Grove' id='title' src='https://occ-0-933-420.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABXQWRPUlrFXrMlZVfx3gnEg0-cgK_gxk8nB99hEM_xv-jZngA30CFRbhx8OJ3uNhG3c9kig9kzj_2spk2zOHZX6ZRGeV2NE3nCNQzYka358_6-crPOQ4EW4uhrTq_xLBn52i4Wkr87tyqiHSUXA6-X-vhdroIyQMZUU79YYhD9imcDCFtbZObw.webp?r=572' alt="hemlock grove"/></h1>
+
+					<!-- Top serie do momento -->
+					<div id='top'>
+
+						<svg width="24" height="24"viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-top-10-badge" style="color: rgb(229, 9, 20);"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 2C2.44772 2 2 2.44772 2 3V21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21V3C22 2.44772 21.5523 2 21 2H3ZM17.2299 10.8934C16.6125 10.4971 15.8913 10.2996 15.0673 10.2996C14.2444 10.2996 13.5231 10.4971 12.9056 10.8934C12.2881 11.2905 11.8114 11.8536 11.4762 12.5839C11.1411 13.3149 10.9735 14.1695 10.9735 15.1493C10.9735 16.1383 11.1411 16.9957 11.4762 17.7221C11.8114 18.4478 12.2881 19.0091 12.9056 19.4052C13.5231 19.8014 14.2444 20 15.0673 20C15.8913 20 16.6125 19.8014 17.2299 19.4052C17.8475 19.0091 18.3242 18.4478 18.6594 17.7221C18.9945 16.9957 19.1612 16.1383 19.1612 15.1493C19.1612 14.1695 18.9945 13.3149 18.6594 12.5839C18.3242 11.8536 17.8475 11.2905 17.2299 10.8934ZM9.47922 19.7994V10.3263L4.92658 11.4351V13.2656L7.20991 12.6774V19.7994H9.47922ZM13.7606 12.9513C14.0767 12.4298 14.5117 12.1701 15.0673 12.1701C15.6239 12.1701 16.0589 12.4298 16.3751 12.9513C16.6913 13.4718 16.8489 14.2058 16.8489 15.1493C16.8489 16.0938 16.6913 16.8268 16.3751 17.3473C16.0589 17.8688 15.6239 18.1296 15.0673 18.1296C14.5117 18.1296 14.0767 17.8688 13.7606 17.3473C13.4442 16.8268 13.2868 16.0938 13.2868 15.1493C13.2868 14.2058 13.4442 13.4718 13.7606 12.9513ZM13.0737 4.19939C12.7285 4.06677 12.3485 4 11.9344 4C11.5194 4 11.1405 4.06677 10.7952 4.19939C10.4521 4.33122 10.1518 4.51771 9.89848 4.75622C9.64404 4.99367 9.44963 5.27379 9.312 5.59396C9.17437 5.91504 9.10556 6.26299 9.10556 6.63872C9.10556 7.01446 9.17437 7.36241 9.312 7.68349C9.44963 8.00352 9.64404 8.28286 9.89848 8.52136C10.1518 8.75974 10.4521 8.9453 10.7952 9.07792C11.1405 9.20976 11.5194 9.27745 11.9344 9.27745C12.3485 9.27745 12.7285 9.20976 13.0737 9.07792C13.4168 8.9453 13.7161 8.75974 13.9704 8.52136C14.2239 8.28286 14.4194 8.00352 14.557 7.68349C14.6947 7.36241 14.7635 7.01446 14.7635 6.63872C14.7635 6.26299 14.6947 5.91504 14.557 5.59396C14.4194 5.27379 14.2239 4.99367 13.9704 4.75622C13.7161 4.51771 13.4168 4.33122 13.0737 4.19939ZM8.75526 5.30869V4.12288H4V5.30869H5.63894V9.15457H7.11632V5.30869H8.75526ZM18.9904 4.3469C18.6683 4.19847 18.2893 4.12327 17.8484 4.12327H15.5101V9.15392H16.9855V7.70838H17.8484C18.2893 7.70838 18.6683 7.63318 18.9904 7.48384C19.3117 7.33541 19.5601 7.12483 19.7366 6.85484C19.9132 6.58578 20 6.26931 20 5.90845C20 5.55682 19.9132 5.24587 19.7366 4.97602C19.5601 4.70683 19.3117 4.49624 18.9904 4.3469ZM11.2392 5.39166C11.4387 5.27379 11.6701 5.21545 11.9344 5.21545C12.1988 5.21545 12.4302 5.27379 12.6297 5.39166C12.8292 5.50954 12.9849 5.67653 13.0955 5.89001C13.2072 6.10521 13.2632 6.35386 13.2632 6.63872C13.2632 6.92267 13.2072 7.17224 13.0955 7.38651C12.9849 7.60092 12.8292 7.76791 12.6297 7.88565C12.4302 8.00352 12.1988 8.062 11.9344 8.062C11.6701 8.062 11.4387 8.00352 11.2392 7.88565C11.0397 7.76791 10.8841 7.60092 10.7724 7.38651C10.6617 7.17224 10.6057 6.92267 10.6057 6.63872C10.6057 6.35386 10.6617 6.10521 10.7724 5.89001C10.8841 5.67653 11.0397 5.50954 11.2392 5.39166ZM16.9855 5.27195H17.6149C17.9252 5.27195 18.1515 5.32845 18.2913 5.43895C18.4309 5.54931 18.5017 5.70616 18.5017 5.90845C18.5017 6.11535 18.4309 6.27589 18.2913 6.38902C18.1515 6.50228 17.9252 6.55878 17.6149 6.55878H16.9855V5.27195Z" fill="currentColor"></path></svg>
+						<h2>Top 9 para crianças hoje</h2>
+
+					</div>
+					
+                    <p id="sinopseJs">Segredos são só parte do cotidiano da pequena Hemlock Grove:<br/>
 						 						o lado sinistro da cidade se esconde em plena luz do dia.</p>
 
 					<!-- Parte dos botões -->
@@ -150,6 +181,18 @@
                         <button id="information">
 							<img id='informationImg' src="https://img.icons8.com/ios/25/ffffff/info--v1.png" alt='alert' />Mais informações
 						</button>
+
+						<!-- Em revisão -->
+						<div id='divMute' style="display:inline-block; position: absolute;right: 50px;border: 1px solid #fff; width: 34px; height: 34px; border-radius: 47px;">
+							
+							<button id='mute' style="border:none; background: transparent;cursor:pointer;outline: none;">
+
+								<img id='muteImg' style='margin: 5px 10px 0 2px;' src="https://img.icons8.com/material-rounded/20/ffffff/no-audio--v1.png"/>
+	
+							</button>
+
+						</div>
+						
                     </div>
 					
                 </div>
@@ -157,6 +200,7 @@
             </div>
 			
 		</header>
+		<!-- main display none -->
 		<main>
 			<section>
 				<div><h2>Minha lista<span class="visibilityText">Ver todos</span><img class="arrow" alt='arrow' src='https://img.icons8.com/metro/15/54b9c5/forward.png'/></h2></div>
@@ -165,23 +209,24 @@
 					<!-- seta esquerda da sendo usado no js -->
 					<button class="arrownLeft"><img class='left' src='https://img.icons8.com/metro/35/ffffff/forward.png' alt='arrow'/></button>
 				
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgA' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgB' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgC' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgD' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgE' class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgF' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgG' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgH' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgI' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgJ' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgK' class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgL' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgM' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgN' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgO' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgP' class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgQ' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					
 					<button class="arrowRight"><img class='right' alt='arrow' src='https://img.icons8.com/metro/35/ffffff/forward.png'/></button>
 
 				</div>
@@ -194,28 +239,31 @@
 					<!-- seta esquerda da sendo usado no js -->
 					<button class="arrownLeft"><img class='left' src='https://img.icons8.com/metro/35/ffffff/forward.png' alt='arrow'/></button>
 				
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
-					<img class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
-					<img class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
-					<img class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
-					<img class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
-					<img class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgA' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgB' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgC' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgD' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgE'class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgF' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgG' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgH' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgI' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgJ' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgK' class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgL' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					<img class='imgM' class='imgScroll' alt="Fate: A saga winx" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYCBNyKU2N6zXaoepQAyELmMySCiQpCeXSWRc6Kc0PIOhYYH5iRH8deEwQYtDShQUnwWEswBBQPwa2rGiXq9Dssi7B0RSHNfeS8YpzMaCEpf2sewJ_e7jNvSSmX8vTnW0MmzNKfyQsQccdpqUfwx5PBpMZ9-oRbhKbtEVHDvnkUL1b70692wKThoS0JqhqGse6OObAH89zb_aapX0y7YiUpGx4498GXf8ZcWOW3iLUFaVyTNVgnNumQTRpe6qOEjoHsqWSqF6g6z3upLvwBcSVN_dOMBfVVI17P9HLTDhtBisE1MZKrvoNWkojXm9MS2__9GwKhUlKVyTCnUmX8Q_S1W.jpg?r=129">
+					<img class='imgN' class='imgScroll' alt="Oidnb" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcvkb8R1RJahSIhq69_b-RH1rd4jGmRfY_3VZSHo8f9BkfSAptu0TGd4UX1SUkB11e5ezesfEaZ0jthh_EPNEF16rQucqT1epNG5UeS-jUNe_vbxTq_e1JZYUdP3-pLtKYHz.jpg?r=feb">
+					<img class='imgO' class='imgScroll' alt="Baki" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTLoOfuQ4p3M08VAVGCiw16b5zjFOOoNxm4rkmjsIyQTzAEODt75ufbEAQwxFdb2JYWt_xxxsofPH1oCkGekxPaswrnzGBdpC2asvABQd8Xh6VMu10bWBz62VZ3neBPDTkJF.jpg?r=d38">
+					<img class='imgP' class='imgScroll' alt="Dahmer" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeIkwRUMnIajdlpYq4tG9xz28GkE_GbEgDcQukdv2ypmnOdTnVYZETlumpla580F5y_CIvnYHewjauf9-Bpl0RK3jzEL-VRH-L-OjbimiX2O-FU40CJRlV5NfOZruluIghbhTXVmsmDYD6DCjYcajonkPD5khNv3zeUp0Lllb9brwMVxiyD1xEGmyWj2dVI.jpg?r=e31">
+					<img class='imgQ' class='imgScroll' alt="A morte pede carona" src="https://occ-0-933-420.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABS25tFDY_Cij0mgEldWnkl1pOq8qtROREaX873sEWo43DIHyX52P4qoB0BUGTWfRMSS7uiChSKqdtbAx4P6FkPXNZ3VRr3dZsfs.webp?r=0f1">
+					
 					<button class="arrowRight"><img class='right' alt='arrow' src='https://img.icons8.com/metro/35/ffffff/forward.png'/></button>
 
 				</div>
 			</section>
 		</main>
+		<script src="js/getSet.js"></script>
 		<script src="js/IndexJs.js"></script>
+		
 	</body>
 </html>

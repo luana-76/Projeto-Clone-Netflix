@@ -2,13 +2,14 @@
 	
 	/* Não mexe nessa porra */
 
-	#firstList .d{
+	#firstList #firstLi{
 		
 		display: block;
 		color: #fff;
+		cursor: pointer;
 
 	}
-	.d::after{
+	.firstLi::after{
 		
 		content: url(https://img.icons8.com/fluency-systems-filled/14/ffffff/down3.png);
 		display: inline-block;
@@ -18,13 +19,13 @@
 
 	}
 
-	.ulone{
+	#responsivNone{
 		
 		display:none;
 
 	}
 
-	#firstList:hover .ulone{
+	#firstList:hover #responsivNone{
 		
 		position: relative;
 		left: -80px;
@@ -44,7 +45,7 @@
 
 	}
 
-	#firstList .ulone li{
+	#firstList #responsivNone li{
 		display: flex;
 		align-items: center;
 		flex-direction: row;
